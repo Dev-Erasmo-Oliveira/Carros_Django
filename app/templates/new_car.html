@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
-{% block content%}
-
-<form method="post" enctype="multipart/form-data">
+{% block content %}
+<div style="background-color: #a7a7a7; padding: 30px; border-radius: 10px; max-width: 500px; margin: 40px auto; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <table>
-           {{ new_car_form.as_table }}
+        <table style="width: 100%; margin-bottom: 20px;">
+            {{ new_car_form.as_table }}
         </table>
-
-        <input type="submit" value="Cadastrar" class="btn btn-primary">
-        
-</form>
+        <input type="submit" value="Cadastrar" class="btn btn-primary" style="background-color: #d62828; color: white; border: none; padding: 10px 20px; border-radius: 5px;">
+    </form>
+</div>
 {% endblock %}
+
