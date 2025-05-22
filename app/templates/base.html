@@ -55,8 +55,10 @@
     }
 
     nav ul li a:hover {
+        color: rgb(117, 117, 231);
         border-radius: 30%;
-        background-color: #77726ec5;
+        background-color: transparent;
+        text-decoration: underline;
     }
 
     nav ul li.active a {
@@ -74,6 +76,7 @@
     <nav>
       <ul>
         <li><a href="{% url 'cars_list' %}">Carros</a></li>
+        <li><a href="{% url 'new_car' %}">Cadastrar Carro </a></li>
       </ul>
     </nav>
   </header>
