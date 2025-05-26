@@ -75,6 +75,10 @@
   <header>
     <nav>
       <ul>
+        {% if user.is_authenticated %}
+        <li>Olá, {{ user.username }}</li>
+        {% endif %}
+
         <li><a href="{% url 'cars_list' %}">Carros</a></li>
         <li><a href="{% url 'new_car' %}">Cadastrar Carro </a></li>
       </ul>
