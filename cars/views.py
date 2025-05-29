@@ -19,13 +19,14 @@ class CarsView(View):
 
 # view para adicionar o carro que o usuário quer e logo depois redirecionar para a lista de carros novamente
 
+class NewCarView(View):
+    def get(self, request):
+        new_car_form = CarModelForm()
+        return render(request, 'new_car.html', {'new_car_form': new_car_form})
 
-def new_car_view(request):
-    if request.method == 'POST':
+    def post(self, request):
         new_car_form = CarModelForm(request.POST, request.FILES)
         if new_car_form.is_valid():
             new_car_form.save()
             return redirect('cars_list')
-    else:
-        new_car_form = CarModelForm()
-    return render(request, 'new_car.html', {'new_car_form': new_car_form})
+        return render(request, 'new_car.html', {'new_car_form': new_car_form})
