@@ -70,9 +70,9 @@
     }
 
     .btn-primary:hover{
-      background-color:#d9534f ;
+      background-color:#108eb8 ;
     }
-    
+
     .error-message {
       color: #d9534f;
       font-size: 14px;
@@ -94,5 +94,6 @@
 
   <div class="buttons-container">
     <a href="{% url 'car_update' pk=object.pk %}" class="btn btn-primary">Editar</a>
+    <a href="{% url 'car_delete' pk=object.pk %}" class="btn btn-danger">Deletar</a>
   </div>
 {% endblock %}
