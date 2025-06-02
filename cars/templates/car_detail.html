@@ -69,6 +69,10 @@
       background-color: #d2221c;
     }
 
+    .btn-primary:hover{
+      background-color:#d9534f ;
+    }
+    
     .error-message {
       color: #d9534f;
       font-size: 14px;
@@ -86,5 +90,9 @@
       <p><strong>Ano do modelo:</strong> {{ object.model_year }}</p>
       <p><strong>Placa:</strong> {{ object.plate }}</p>
       <p><strong>Preço:</strong> R$ {{ object.value }}</p>
+  </div>
+
+  <div class="buttons-container">
+    <a href="{% url 'car_update' pk=object.pk %}" class="btn btn-primary">Editar</a>
   </div>
 {% endblock %}
