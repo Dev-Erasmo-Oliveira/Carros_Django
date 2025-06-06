@@ -15,10 +15,11 @@ def car_inventory_update():
         cars_value=cars_value
     )
 
-@receiver (pre_save, sender = Car)
+
+@receiver(pre_save, sender=Car)
 def car_pre_save(sender, instance, **kwargs):
     if not instance.bio:
-        instance.bio = 'Bio gerada automaticamente!'
+        instance.bio = 'O usuário desejou não informar uma BIO sobre o carro!'
 
 
 @receiver(post_save, sender=Car)
